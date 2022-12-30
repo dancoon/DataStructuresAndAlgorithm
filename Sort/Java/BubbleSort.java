@@ -28,6 +28,7 @@ class BubbleSort{
 	    int[] arr = {6, 4, 2, 3, 8, 9, 1};
 
 	    Sort obj = new Sort();
+		
 		System.out.println("Array before sorting:");
 		obj.printarray(arr, arr.length);
 
