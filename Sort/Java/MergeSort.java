@@ -4,7 +4,6 @@ public static class MSort {
 	{
 		int n1 = m - l + 1;
 		int n2 = r - m;
-
 		int L[] = new int[n1];
 		int R[] = new int[n2];
 
@@ -14,7 +13,6 @@ public static class MSort {
 			R[j] = arr[m + 1 + j];
 
 		int i = 0, j = 0;
-
 		int k = l;
 		while (i < n1 && j < n2) {
 			if (L[i] <= R[j]) {
@@ -38,7 +36,6 @@ public static class MSort {
 			k++;
 		}
 	}
-
 	void sort(int arr[], int l, int r)
 	{
 		if (l < r) {
@@ -57,7 +54,6 @@ public static class MSort {
             System.out.print(arr[i] + " ");
         System.out.println();
     }
-
     public static void main(String args[])
     {
         int arr[] = { 12, 11, 13, 5, 6, 7 };
@@ -71,5 +67,4 @@ public static class MSort {
         System.out.println("\nSorted array");
         printArray(arr);
     }
-
 }
