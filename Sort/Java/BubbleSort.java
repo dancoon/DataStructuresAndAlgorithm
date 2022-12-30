@@ -1,13 +1,5 @@
 class BubbleSort{
 	public static class Sort{
-		public void swap(int a, int b){
-			int temp;
-
-			temp = a;
-			a = b;
-			b = temp;
-		}
-
 		public void sortarray(int[] arr, int n){
 			int i, j;
 
