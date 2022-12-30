@@ -13,7 +13,6 @@ public class SelectionSort {
             }
             return pos; 
         }
-
         public void sortarray(int[] arr, int n){
             int i, p , temp;
             
@@ -45,6 +44,4 @@ public class SelectionSort {
         System.out.println("Array before sorting:");
         obj.printarray(arr, arr.length);
     }
-
-
 }
