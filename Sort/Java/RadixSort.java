@@ -23,7 +23,7 @@ public class RadixSort {
             for (int i = 1; i < count.length; i++) {
                 count[i] += count[i - 1];
             }
-            for (int i = 0; i < n; i++) {
+            for (int i = n - 1; i >= 0; i--) {
                 output[--count[(arr[i] / pos) % 10]] = arr[i];
             }
             for (int j = 0; j < n; j++) {
@@ -44,7 +44,7 @@ public class RadixSort {
         System.out.println();
     }
     public static void main(String[] args) {
-        int[] arr = {93, 88, 77, 26, 55, 63, 32, 40, 01};
+        int[] arr = {3, 880, 77, 726, 55, 63, 62, 40, 01};
 
         Sort obj = new Sort();
         System.out.println("Array before sorted: ");
