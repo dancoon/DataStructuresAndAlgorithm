@@ -1,19 +1,19 @@
 public class MergeSort {
 public static class MSort {
-	public void merge(int arr[], int l, int m, int r)
+	public void merge(int arr[], int beg, int mid, int end)
 	{
-		int n1 = m - l + 1;
-		int n2 = r - m;
+		int n1 = mid - beg + 1;
+		int n2 = end - mid;
 		int L[] = new int[n1];
 		int R[] = new int[n2];
 
 		for (int i = 0; i < n1; ++i)
-			L[i] = arr[l + i];
+			L[i] = arr[beg + i];
 		for (int j = 0; j < n2; ++j)
-			R[j] = arr[m + 1 + j];
+			R[j] = arr[mid + 1 + j];
 
 		int i = 0, j = 0;
-		int k = l;
+		int k = beg;
 		while (i < n1 && j < n2) {
 			if (L[i] <= R[j]) {
 				arr[k] = L[i];
@@ -36,14 +36,14 @@ public static class MSort {
 			k++;
 		}
 	}
-	void sort(int arr[], int l, int r)
+	void sort(int arr[], int beg, int end)
 	{
-		if (l < r) {
-			int m = l + (r - l) / 2;
+		if (beg < end) {
+			int mid = beg + (end - beg) / 2;
 
-			sort(arr, l, m);
-			sort(arr, m + 1, r);
-			merge(arr, l, m, r);
+			sort(arr, beg, mid);
+			sort(arr, mid + 1, end);
+			merge(arr, beg, mid, end);
 		}
 	}
 }
