@@ -22,7 +22,7 @@ void countsort(int arr[], int n, int pos)
 	for (i = 1; i < 10; i++)
 		count[i] += count[i - 1];
 
-	for (i = 0; i < n; i++)
+	for (i = n - 1; i >= 0; i++)
 		output[--count[(arr[i] / pos) % 10]] = arr[i];
 
 	for (i = 0; i < n; i++)
