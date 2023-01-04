@@ -15,6 +15,7 @@ void insert_last(int item);
 void insert_location(int item, int location);
 void delete_node(Node **hd);
 void search(int item);
+Node *reverse_node(Node **hd);
 
 int main(void)
 {
@@ -22,10 +23,11 @@ int main(void)
 	insert_last(12);
 	insert_location(34, 0);
 	printf("%d %d %d\n", head->data, head->next->data, head->next->next->data);
-	delete_node(&head->next);
-	insert_last(67);
+	// delete_node(&head->next);
+	// insert_last(67);
+	head = reverse_node(&head);
 	printf("%d %d %d\n", head->data, head->next->data, head->next->next->data);
-	search(12);
+	// search(12);
 	return (0);
 }
 
@@ -99,7 +101,6 @@ void insert_location(int item, int location)
 void delete_node(Node **hd)
 {
 	Node *temp;
-
 	temp = *(hd);
 	*hd = (*hd)->next;
 	free(temp);
@@ -128,4 +129,20 @@ void search(int item)
 			return;
 		}
 	}
+}
+
+Node *reverse_node(Node **hd)
+{
+	Node *current, *next, *prev;
+	current = *hd;
+	prev = NULL;
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	head = prev;
+	return (head);
 }
