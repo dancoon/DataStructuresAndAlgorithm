@@ -13,16 +13,23 @@ Node *head;
 void insert_beginning(int item);
 void insert_last(int item);
 void insert_location(int item, int loc);
+void delete_first();
 
 int main(void)
 {
-    insert_last(4);
-    insert_beginning(2);
+    insert_last(1);
+    insert_last(2);
     insert_last(3);
-    insert_beginning(1);
-    insert_location(0, 7);    
-    // printf("%d", head->next->data);
-    printf("%d %d %d %d\n", head->data, head->next->data, head->next->next->data, head->next->next->next->data);
+    insert_last(4);
+    insert_last(5);
+    // insert_beginning(2);
+    // insert_last(3);
+    // insert_beginning(1);
+    // insert_location(0, 2); 
+    delete_first();   
+    delete_first();
+    printf("%d", head->data);
+    // printf("%d %d %d %d\n", head->data, head->next->data, head->next->next->data, head->next->next->next->data);
     return (0);
 }
 
@@ -122,4 +129,29 @@ void insert_location(int item, int loc)
         current->prev->next = node;
         printf("Node inserted!!!\n");
     }
+}
+
+void delete_first()
+{
+    Node *temp;
+    if (head == NULL)
+    {
+        printf("List is empty!!!\n");
+        return;
+    }
+    else if (head->next == NULL)
+    {
+        temp = head;
+        head = head->next;
+        free(temp);
+        printf("Node deleted!!!\n");
+    }
+    else
+    {
+        temp = head;
+        head = head->next;
+        head->prev = NULL;
+        free(temp);
+        printf("Node deleted!!\n");
+    }    
 }
