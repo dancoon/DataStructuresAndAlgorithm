@@ -20,7 +20,8 @@ int main(void)
     insert_beginning(2);
     insert_last(3);
     insert_beginning(1);
-    insert_location(0, 0);    
+    insert_location(0, 7);    
+    // printf("%d", head->next->data);
     printf("%d %d %d %d\n", head->data, head->next->data, head->next->next->data, head->next->next->next->data);
     return (0);
 }
