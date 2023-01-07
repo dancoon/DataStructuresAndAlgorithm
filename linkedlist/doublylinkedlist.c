@@ -27,11 +27,10 @@ int main(void)
     // insert_last(3);
     // insert_beginning(1);
     // insert_location(0, 2); 
-    // delete_first();   
+    delete_first();   
     delete_last();
-    delete_last();
-    printf("%d\n", head->next->data);
-     printf("%d\n", head->next->next->next->next->data);
+    printf("%d\n", head->next->next->data);
+     printf("%d\n", head->data);
     // printf("%d %d %d %d\n", head->data, head->next->data, head->next->next->data, head->next->next->next->data);
     return (0);
 }
@@ -182,7 +181,6 @@ void delete_last()
             temp = temp->next;
         }
         temp->prev->next = NULL;
-        temp->prev = NULL;
         free(temp);
         printf("Node deleted!!\n");
     }   
