@@ -11,12 +11,14 @@ Node *head = NULL;
 Node *current;
 
 void insert_beginning(int item);
+void insert_last(int item);
 
 int main(void)
 {
     insert_beginning(1);
+    insert_last(2);
     insert_beginning(0);
-    printf("%d", head->next->data);    
+    printf("%d %d %d", head->data, head->next->data, head->next->next->data);    
     return 0;
 }
 
@@ -45,7 +47,30 @@ void insert_beginning(int item)
         head = node;
         printf("Node inserted!!\n");
     }
-    
-    
-
 }   
+
+void insert_last(int item)
+{
+    Node *node = (Node *) malloc(sizeof(Node));
+    if (node == NULL)
+    {
+        printf("Overflow!!!\n");
+        return;
+    }
+    node->data = item;
+    if (head == NULL)
+    {
+        head = node;
+        node->next = head;
+        printf("Node inserted!!\n");
+    }
+    else
+    {
+        current = head;
+        while (current->next != head)
+            current = current->next;
+        current->next = node;
+        node->next = head;
+        printf("Node inserted!!!\n");
+    }
+}
