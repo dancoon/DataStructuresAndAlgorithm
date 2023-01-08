@@ -12,13 +12,16 @@ Node *current;
 
 void insert_beginning(int item);
 void insert_last(int item);
+void search(int item);
 
 int main(void)
 {
     insert_beginning(1);
     insert_last(2);
     insert_beginning(0);
-    printf("%d %d %d", head->data, head->next->data, head->next->next->data);    
+    insert_last(3);
+    search(0);
+    printf("%d %d %d", head->data, head->next->data, head->next->next->next->data);    
     return 0;
 }
 
@@ -73,4 +76,27 @@ void insert_last(int item)
         node->next = head;
         printf("Node inserted!!!\n");
     }
+}
+
+void search(int item)
+{
+    current = head;
+    if (head == NULL)
+    {
+        printf("List is empty!!!\n");
+        return;
+    }
+    else
+    {
+        while (current->next != head)
+        {
+            if (current->data == item || current->next->data == item)
+            {
+                printf("Item found!!!\n");
+                return;
+            }
+            current = current->next;
+        }
+    }
+    printf("Item not found!!!!\n");
 }
