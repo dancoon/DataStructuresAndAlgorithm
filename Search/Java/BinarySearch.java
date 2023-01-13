@@ -23,7 +23,7 @@ public class BinarySearch {
         System.out.println();
     }
     public static void main(String[] args) {
-        int[] arr = {10, 9, 7, 5 ,4, 2, 1, 0};
+        int[] arr = {0, 1, 4, 6 , 7, 8, 9, 10};
         Search obj = new Search();
         System.out.println("Array:");
         printarray(arr);
