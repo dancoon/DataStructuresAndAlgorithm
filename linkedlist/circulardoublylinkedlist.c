@@ -13,13 +13,15 @@ Node *current;
 
 void insert_beginning(int item);
 void insert_last(int item);
+void delete_first();
 
 int main(void)
 {   
     insert_beginning(1);
+    insert_last(2);
     insert_beginning(0);
-
-    printf("%d %d", head->data, head->next->data);
+    delete_first();
+    printf("%d", head->data);
     return 0;
 }
 
@@ -78,4 +80,30 @@ void insert_last(int item)
         node->next = head;
         printf("Node inserted!!!\n");
     }
+}
+
+void delete_first()
+{
+    Node *temp;
+    if (head->next = head)
+    {
+        free(head);
+        head = NULL;
+        printf("Node deleted!!!\n");
+    }
+    else
+    {
+        current = head;
+        while (current->next != head)
+        {
+            current = current->next;
+        }
+        current->next = head->next;
+        head->next->prev = current;
+        temp = head;
+        head = head->next;
+        free(temp);
+        printf("Node deleted!!!\n");        
+    }
+    
 }
