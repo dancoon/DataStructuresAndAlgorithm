@@ -9,7 +9,7 @@ typedef struct node
     int data;
     struct node *left, *right;
 }Node;
-
+int max(int a, int b);
 Node *newNode(int data);
 Node *insertNode(Node *node, int data);
 void inorderTraversal(Node *node);
@@ -17,6 +17,7 @@ Node *minValueNode(Node *node);
 Node *maxValueNode(Node *node);
 Node *deleteNode(Node *root, int data);
 Node *searchNode(Node *root, int data);
+int maxDepth(Node *root);
 
 Node *root = NULL;
 
@@ -36,7 +37,7 @@ int main(void)
     min = minValueNode(root);
     printf("\nMin value is %d", min->data);
     max = maxValueNode(root);
-    printf("\nMax value is %d", max->data);
+    printf("\nMax value is %d and the depth is %d", max->data, maxDepth(root));
 
     search = searchNode(root, 34);
     if (search != NULL)
@@ -132,4 +133,18 @@ Node *searchNode(Node *root, int data)
         return searchNode(root->left, data);
     else
         return searchNode(root->right, data);
+}
+
+int maxDepth(Node *root)
+{
+    if (!root)
+        return 0;
+    int maxLeft = maxDepth(root->left);
+    int maxRight = maxDepth(root->right);
+    return max(maxLeft, maxRight) + 1;
+}
+
+int max(int a, int b)
+{
+    return a > b ? a : b;
 }
