@@ -37,3 +37,7 @@ int max (int a, int b);
 int maxDepth(Node *root);
 
 Node *searchNode(Node *root, int data);
+
+int isBalanced(Node *node);
+
+int getHeight(Node *node);

@@ -31,3 +31,7 @@ int getBalance(Node *node);
 int height(Node *node);
 
 int max (int a, int b);
+
+int isBalanced(Node *node);
+
+int getHeight(Node *node);
