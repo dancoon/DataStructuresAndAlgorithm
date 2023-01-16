@@ -24,3 +24,7 @@ Node *deleteNode(Node *root, int data);
 Node *searchNode(Node *root, int data);
 
 int maxDepth(Node *root);
+
+void preOrderTraversal(Node *node);
+
+void postOrderTraversal(Node *node);
