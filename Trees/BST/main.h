@@ -28,3 +28,7 @@ int maxDepth(Node *root);
 void preOrderTraversal(Node *node);
 
 void postOrderTraversal(Node *node);
+
+int isBalanced(Node *node);
+
+int getHeight(Node *node);

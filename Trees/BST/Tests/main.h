@@ -24,3 +24,7 @@ Node *deleteNode(Node *root, int data);
 Node *searchNode(Node *root, int data);
 
 int maxDepth(Node *root);
+
+int isBalanced(Node *node);
+
+int getHeight(Node *node);
